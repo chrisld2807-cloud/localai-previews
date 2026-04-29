@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edelen' Tree Service | Professional Tree Removal & Pruning in Jacksonville</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d5016;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2d5016;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #2d5016;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(45, 80, 22, 0.95) 0%, rgba(56, 102, 28, 0.9) 100%), 
+                        url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect fill="%23385e1a" width="100" height="100"/><path d="M50 10 L55 30 L75 30 L60 42 L65 62 L50 50 L35 62 L40 42 L25 30 L45 30 Z" fill="%234a7020" opacity="0.3"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #ff8555;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about {
+            background: #f9f9f9;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #2d5016 0%, #4a7020 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid #2d5016;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .why-choose {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7020 100%);
+            color: white;
+        }
+
+        .why-choose .section-title {
+            color: white;
+        }
+
+        .why-choose .section-subtitle {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            background: rgba(255,255,255,0.15);
+            transform: scale(1.05);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-item p {
+            opacity: 0.9;
+        }
+
+        .contact {
+            background: #f9f9f9;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: #2d5016;
+            min-width: 40px;
+        }
+
+        .contact-details h3 {
+            color: #2d5016;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .contact-details a {
+            color: #2d5016;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-details a:hover {
+            color: #4a7020;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2d5016;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2d5016;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: #2d5016;
+            color: white;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #4a7020;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(45, 80, 22, 0.3);
+        }
+
+        footer {
+            background: #1a2e0d;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 1rem;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 5rem 1rem 4rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .cta-button {
+                padding: 0.9rem 2rem;
+                font-size: 1.1rem;
+            }
+
+            .service-card,
+            .contact-info,
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Edelen' Tree Service</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose">Why Choose Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Jacksonville's Trusted Tree Care Experts</h1>
+            <p>Professional tree removal and pruning services to keep your property safe and beautiful</p>
+            <a href="#contact" class="cta-button">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <section class="section about" id="about">
+        <h2 class="section-title">About Edelen' Tree Service</h2>
+        <p class="section-subtitle">Your partner in professional tree care throughout Jacksonville</p>
+        <div class="about-content">
+            <div class="about-text">
+                <p>At Edelen' Tree Service, we understand that your trees are valuable assets to your property. With years of experience serving the Jacksonville community, we've built our reputation on delivering exceptional tree care services that prioritize safety, quality, and customer satisfaction.</p>
+                <p>Our team of certified arborists and skilled technicians use state-of-the-art equipment and industry-leading techniques to handle every job, from routine pruning to complex tree removals. We're not just about cutting trees—we're about maintaining the health and beauty of your landscape while ensuring the safety of your property.</p>
+                <p>Whether you're dealing with storm damage, overgrown branches, or diseased trees, we bring professional expertise and a commitment to excellence to every project. We're fully licensed, insured, and dedicated to providing honest, reliable service you can trust.</p>
+            </div>
+            <div class="about-image">🌳</div>
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Comprehensive tree care solutions tailored to your needs</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🪓</div>
+                <h3>Tree Removal</h3>
+                <p>Safe and efficient removal of unwanted, dead, or hazardous trees from your property. We handle trees of all sizes with precision and care, ensuring minimal impact on your landscape. Our team follows strict safety protocols and uses specialized equipment to protect your property throughout the removal process.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✂️</div>
+                <h3>Professional Pruning</h3>
+                <p>Expert pruning services to maintain tree health, improve structure, and enhance the aesthetic appeal of your landscape. Our certified arborists understand proper pruning techniques that promote healthy growth, reduce disease risk, and prevent potential hazards from overhanging branches.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section why-choose" id="why-choose">
+        <h2 class="section-title">Why Choose Edelen' Tree Service</h2>
+        <p class="section-subtitle">Experience the difference of working with Jacksonville's premier tree care professionals</p>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <div class="benefit-icon">✓</div>
+                <h3>Licensed & Insured</h3>
+                <p>Full licensing and comprehensive insurance for your complete peace of mind</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">⚡</div>
+                <h3>Fast Response</h3>
+                <p>Quick turnaround times for emergency services and scheduled appointments</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">💰</div>
+                <h3>Fair Pricing</h3>
+                <p>Competitive rates with transparent quotes and no hidden fees</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🛠️</div>
+                <h3>Expert Team</h3>
+                <p>Certified arborists with years of experience and ongoing training</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Ready to schedule your tree service? Contact us today for a free consultation</p>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h3>Call Us</h3>
+                        <p><a href="tel:9047316439">(904) 731-6439</a></p>
+                        <p>We're here to answer your questions</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-details">
+                        <h3>Email Us</h3>
+                        <p><a href="mailto:edelentree@gmail.com">edelentree@gmail.com</a></p>
+                        <p>
