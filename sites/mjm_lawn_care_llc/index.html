@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJM LAWN CARE LLC - Professional Lawn Care Services in Jacksonville</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .nav {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d5016;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #4a7c23;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #2d5016;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #4a7c23 0%, #2d5016 100%);
+            color: white;
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.03) 10px, rgba(255,255,255,0.03) 20px);
+            pointer-events: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ffc107;
+            color: #2d5016;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: #ffcd38;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2d5016;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #4a7c23;
+            border-radius: 2px;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid #4a7c23;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .why-choose {
+            background: #f8f9fa;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #4a7c23, #2d5016);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover .feature-icon {
+            transform: rotate(360deg);
+        }
+
+        .feature-item h3 {
+            color: #2d5016;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-item p {
+            color: #666;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c23 100%);
+            color: white;
+        }
+
+        .contact-section .section-title {
+            color: white;
+        }
+
+        .contact-section .section-title::after {
+            background: #ffc107;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #ffc107;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #ffc107;
+        }
+
+        .hours-list {
+            list-style: none;
+            font-size: 1.1rem;
+        }
+
+        .hours-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .footer {
+            background: #1a2f0d;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .footer p {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem 2rem;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .cta-button {
+                padding: 0.875rem 2rem;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">MJM LAWN CARE LLC</div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose">Why Choose Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Jacksonville's Premier Lawn Care Experts</h1>
+            <p>Professional mowing and edging services that keep your property looking pristine all year round</p>
+            <a href="tel:9046019519" class="cta-button">Call Now for Free Quote</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2 class="section-title">About MJM Lawn Care</h2>
+        <div class="about-content">
+            <p>MJM Lawn Care LLC is Jacksonville's trusted partner for professional lawn maintenance services. We understand that your property is a reflection of your pride and investment, which is why we treat every lawn as if it were our own.</p>
+            <p>Our experienced team combines years of expertise with meticulous attention to detail to deliver consistently exceptional results. We're not just cutting grass—we're creating beautiful outdoor spaces that enhance your property's curb appeal and value.</p>
+            <p>Whether you're a busy homeowner or a property manager overseeing multiple locations, we provide reliable, high-quality lawn care services that exceed expectations every single time.</p>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🌱</div>
+                <h3>Professional Mowing</h3>
+                <p>Precision lawn mowing services that maintain the perfect grass height for a healthy, beautiful lawn. We use professional-grade equipment to ensure clean, even cuts every time, promoting optimal grass health and stunning visual appeal.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✂️</div>
+                <h3>Expert Edging</h3>
+                <p>Crisp, clean edging along driveways, walkways, and garden beds that gives your property that professionally manicured look. Our meticulous edging services create defined borders that make your landscape stand out in the neighborhood.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose" class="section why-choose">
+        <h2 class="section-title">Why Choose MJM Lawn Care</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">⭐</div>
+                <h3>Quality Guaranteed</h3>
+                <p>We take pride in delivering exceptional results on every job, ensuring your complete satisfaction.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">⏰</div>
+                <h3>Reliable Service</h3>
+                <p>Consistent scheduling and dependable service you can count on, week after week.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💰</div>
+                <h3>Fair Pricing</h3>
+                <p>Competitive rates with transparent pricing and no hidden fees—just honest lawn care.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🏆</div>
+                <h3>Professional Team</h3>
+                <p>Experienced professionals who treat your property with the respect it deserves.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-card">
+                <h3>Contact Information</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <a href="tel:9046019519">(904) 601-9519</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>✉️</span>
+                        <a href="mailto:mjmlawncare@gmail.com">mjmlawncare@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Jacksonville, FL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-card">
+                <h3>Business Hours</h3>
+                <ul class="hours-list">
+                    <li>Monday: 8:00 AM - 5:00 PM</li>
+                    <li>Tuesday: 8:00 AM - 5:00 PM</li>
+                    <li>Wednesday: 8:00 AM - 5:00 PM</li>
+                    <li>Thursday: 8:00 AM - 5:00 PM</li>
+                    <li>Friday: 8:00 AM - 5:00 PM</li>
+                    <li>Saturday: Closed</li>
+                    <li>Sunday: Closed</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 MJM LAWN CARE LLC. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        const navLinks = document.getElementById('navLinks');
+                        navLinks.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
