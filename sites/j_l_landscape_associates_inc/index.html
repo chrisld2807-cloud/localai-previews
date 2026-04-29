@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J L Landscape & Associates Inc | Commercial Landscaping in Middleburg</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        nav {
+            background: rgba(34, 53, 35, 0.98);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        nav ul li a:hover {
+            color: #7fb582;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(34, 53, 35, 0.95), rgba(81, 112, 83, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23516f53" width="1200" height="600"/><path fill="%23405840" d="M0 450h1200v150H0z"/><circle fill="%2356735a" cx="200" cy="500" r="80"/><circle fill="%2356735a" cx="600" cy="480" r="100"/><circle fill="%2356735a" cx="1000" cy="510" r="90"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            padding: 150px 2rem 120px;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #7fb582;
+            color: #fff;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: #6a9f6d;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        .section {
+            padding: 80px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #223523;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about {
+            background: #f9f9f9;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .about-text p {
+            margin-bottom: 1.2rem;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #516f53, #7fb582);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .services {
+            background: #fff;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            border-color: #7fb582;
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #7fb582;
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #223523;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .why-choose {
+            background: linear-gradient(135deg, #223523, #405840);
+            color: #fff;
+        }
+
+        .why-choose .section-title {
+            color: #fff;
+        }
+
+        .why-choose .section-subtitle {
+            color: #d0d0d0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #7fb582;
+        }
+
+        .feature h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature p {
+            color: #d0d0d0;
+            line-height: 1.7;
+        }
+
+        .contact {
+            background: #f9f9f9;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: #fff;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            gap: 1.5rem;
+        }
+
+        .contact-item-icon {
+            font-size: 2rem;
+            color: #7fb582;
+            min-width: 40px;
+        }
+
+        .contact-item-content h3 {
+            font-size: 1.2rem;
+            color: #223523;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item-content p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .contact-item-content a {
+            color: #7fb582;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item-content a:hover {
+            color: #516f53;
+        }
+
+        .hours-table {
+            background: #fff;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .hours-table h3 {
+            font-size: 1.8rem;
+            color: #223523;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 1.1rem;
+        }
+
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+
+        .hours-day {
+            font-weight: 600;
+            color: #223523;
+        }
+
+        .hours-time {
+            color: #666;
+        }
+
+        footer {
+            background: #223523;
+            color: #fff;
+            text-align: center;
+            padding: 2.5rem 2rem;
+        }
+
+        footer p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav .container {
+                flex-wrap: wrap;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                display: none;
+                padding-top: 1rem;
+                gap: 1rem;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero {
+                padding: 100px 1rem 80px;
+            }
+
+            .section {
+                padding: 50px 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">J L Landscape & Associates</div>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>Professional Commercial Landscaping in Middleburg</h1>
+        <p>Transform your business property with expert landscape design and maintenance that impresses clients and enhances curb appeal</p>
+        <a href="#contact" class="cta-button">Get Your Free Quote</a>
+    </section>
+
+    <section id="about" class="about section">
+        <h2 class="section-title">About J L Landscape & Associates</h2>
+        <p class="section-subtitle">Your Trusted Commercial Landscaping Partner</p>
+        <div class="about-content">
+            <div class="about-text">
+                <p>J L Landscape & Associates Inc has been serving the Middleburg business community with exceptional commercial landscaping services that deliver results. We understand that your property's appearance directly impacts your business reputation and client perceptions.</p>
+                <p>Our team specializes in creating and maintaining professional outdoor spaces that reflect the quality and values of your organization. From office parks and retail centers to industrial facilities and corporate campuses, we bring expertise, reliability, and attention to detail to every project.</p>
+                <p>We pride ourselves on consistent communication, flexible scheduling, and comprehensive solutions that keep your property looking immaculate year-round. When you partner with J L Landscape & Associates, you're investing in a landscape that works as hard as you do.</p>
+            </div>
+            <div class="about-image">🌳</div>
+        </div>
+    </section>
+
+    <section id="services" class="services section">
+        <h2 class="section-title">Our Commercial Services</h2>
+        <p class="section-subtitle">Comprehensive landscaping solutions tailored for businesses</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Commercial Property Maintenance</h3>
+                <p>Regular scheduled maintenance keeps your business property pristine and welcoming. We handle mowing, trimming, edging, and seasonal clean-up to maintain professional standards.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌿</div>
+                <h3>Landscape Design & Installation</h3>
+                <p>Custom landscape designs that align with your brand and budget. We create functional, attractive outdoor spaces that enhance property value and client experience.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💧</div>
+                <h3>Irrigation Management</h3>
+                <p>Efficient irrigation systems designed to keep your landscape healthy while conserving water. Installation, maintenance, and repair services available.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🍂</div>
+                <h3>Seasonal Services</h3>
+                <p>Year-round solutions including spring cleanups, mulching, leaf removal, and winter preparation to ensure your property looks its best every season.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✂️</div>
+                <h3>Tree & Shrub Care</h3>
+                <p>Professional pruning, trimming, and health assessments for trees and shrubs. We protect your landscape investment with expert horticultural care.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌾</div>
+                <h3>Turf Management</h3>
+                <p>Comprehensive lawn care including fertilization, aeration, weed control, and disease management to maintain lush, healthy commercial turf.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose section">
+        <h2 class="section-title">Why Choose J L Landscape & Associates</h2>
+        <p class="section-subtitle">The advantages of partnering with Middleburg's premier commercial landscaping company</p>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">⭐</div>
+                <h3>Commercial Expertise</h3>
+                <p>Specialized experience working with business properties of all sizes, from small offices to large corporate campuses.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🤝</div>
+                <h3>Reliable Service</h3>
+                <p>Consistent, on-time service that respects your business operations. We work around your schedule, not the other way around.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>Competitive Pricing</h3>
+                <p>Fair, transparent pricing with customized service packages that fit your budget and landscape needs.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🛠️</div>
+                <h3>Professional Equipment</h3>
+                <p>State-of-the-art commercial equipment and trained teams ensure efficient, high-quality results every visit.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section">
+        <h2 class="section-title">Contact Us Today</h2>
+        <p class="section-subtitle">Ready to elevate your commercial property? Get in touch for a free consultation</p>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-item-icon">📞</div>
+                    <div class="contact-item-content">
+                        <h3>Phone</h3>
+                        <p><a href="tel:9047035502">(904) 703-5502</a></p>
+                    </div
