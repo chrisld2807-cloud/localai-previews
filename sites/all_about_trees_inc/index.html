@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All About Trees, Inc. | Professional Tree Service in Middleburg</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #2c3e2c;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid #4a7c3a;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d5a1e;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #4a7c3a 0%, #6ea557 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #2c3e2c;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        nav ul li a:hover {
+            color: #4a7c3a;
+        }
+
+        .nav-phone {
+            color: #4a7c3a;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #2d5a1e;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(45, 90, 30, 0.95) 0%, rgba(74, 124, 58, 0.9) 100%), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%234a7c3a" width="1200" height="600"/><path fill="%232d5a1e" opacity="0.3" d="M0 300 Q300 200 600 300 T1200 300 L1200 600 L0 600 Z"/><circle fill="%236ea557" opacity="0.2" cx="200" cy="150" r="80"/><circle fill="%236ea557" opacity="0.2" cx="900" cy="250" r="100"/><circle fill="%236ea557" opacity="0.2" cx="1100" cy="100" r="60"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 120px 20px 100px;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 18px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+            border: 3px solid #ff6b35;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .cta-button:hover {
+            background: #ff8555;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 1.2s both;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .hero-feature::before {
+            content: "✓";
+            background: #ff6b35;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            background: #f8f9f5;
+        }
+
+        .about h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2d5a1e;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #5a7a4a;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #3c4c3c;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #4a7c3a 0%, #6ea557 100%);
+            border-radius: 15px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            color: rgba(255,255,255,0.9);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2d5a1e;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid #e8f0e3;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(74, 124, 58, 0.2);
+            border-color: #4a7c3a;
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2d5a1e;
+        }
+
+        .service-card p {
+            color: #5a6a5a;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #2d5a1e 0%, #4a7c3a 100%);
+            color: white;
+        }
+
+        .why-choose h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .reason {
+            text-align: center;
+        }
+
+        .reason-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .reason h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .reason p {
+            font-size: 1rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            background: #f8f9f5;
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2d5a1e;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: start;
+            gap: 1.5rem;
+        }
+
+        .contact-item-icon {
+            font-size: 2rem;
+            color: #4a7c3a;
+            min-width: 40px;
+        }
+
+        .contact-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #2d5a1e;
+        }
+
+        .contact-item p {
+            color: #5a6a5a;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .contact-item a {
+            color: #4a7c3a;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .contact-item a:hover {
+            color: #2d5a1e;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            padding: 0.5rem 0;
+            color: #3c4c3c;
+            font-size: 1rem;
+        }
+
+        .contact-cta {
+            background: linear-gradient(135deg, #4a7c3a 0%, #6ea557 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .contact-cta .cta-button {
+            background: white;
+            color: #2d5a1e;
+            border-color: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .contact-cta .cta-button:hover {
+            background: #ff6b35;
+            color: white;
+            border-color: #ff6b35;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a2f1a;
+            color: white;
+            padding: 2rem 20px;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.9;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 1rem;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-phone {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .cta-button {
+                font-size: 1.1rem;
+                padding: 15px 35px;
+            }
+
+            .hero-features {
+                gap: 1.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-info {
+                padding: 2rem;
+            }
+
+            .services h2,
+            .about h2,
+            .why-choose h2,
+            .contact h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 80px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">🌳</div>
+                <span>All About Trees, Inc.</span>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="tel:9045917881" class="nav-phone">(904) 591-7881</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Expert Tree Care for Middleburg Properties</h1>
+            <p>Professional tree services that keep your landscape healthy, safe, and beautiful year-round</p>
+            <a href="tel:9045917881" class="cta-button">Get Your Free Quote Today</a>
+            <div class="hero-features">
+                <div class="hero-feature">Licensed & Insured</div>
+                <div class="hero-feature">20+ Years Experience</div>
+                <div class="hero-feature">Free Estimates</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About All About Trees, Inc.</h2>
+            <p class="section-subtitle">Your trusted tree care partner in Middleburg for over two decades</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>At All About Trees, Inc., we've dedicated ourselves to providing exceptional tree care services to the Middleburg community. Our team of certified arborists and experienced tree care professionals understand that the trees on your property are valuable assets that require expert attention.</p>
+                    <p>We take pride in our commitment to safety, quality, and customer satisfaction. Every job we undertake is completed with meticulous attention to detail, using industry-leading equipment and techniques to ensure the health and longevity of your trees.</p>
+                    <p>Whether you need routine maintenance, emergency tree removal, or expert consultation, All About Trees, Inc. brings the knowledge and expertise to handle any tree service challenge with professionalism and care.</p>
