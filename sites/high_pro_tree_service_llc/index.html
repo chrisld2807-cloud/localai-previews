@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Pro Tree Service LLC | Professional Tree Removal in Orange Park</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #1a4d2e;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #7cb342;
+        }
+
+        .nav-phone {
+            color: #7cb342;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 77, 46, 0.95), rgba(76, 175, 80, 0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231a4d2e" width="1200" height="600"/><path fill="%232d5a3d" d="M0 300L50 325L100 275L150 350L200 300L250 325L300 275L350 350L400 300L450 325L500 275L550 350L600 300L650 325L700 275L750 350L800 300L850 325L900 275L950 350L1000 300L1050 325L1100 275L1150 350L1200 300V600H0Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 120px 20px 100px;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6f00;
+            color: #fff;
+            padding: 18px 45px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 111, 0, 0.4);
+        }
+
+        .cta-button:hover {
+            background: #e65100;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 111, 0, 0.6);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            background: #f5f5f5;
+        }
+
+        .about h2 {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #1a4d2e;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            background: #fff;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #1a4d2e;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid #7cb342;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 26px;
+            margin-bottom: 15px;
+            color: #1a4d2e;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1a4d2e 0%, #2d5a3d 100%);
+            color: #fff;
+        }
+
+        .why-choose h2 {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-item h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .feature-item p {
+            font-size: 16px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            background: #f5f5f5;
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 50px;
+            color: #1a4d2e;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: #1a4d2e;
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+
+        .contact-item strong {
+            color: #1a4d2e;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .contact-item a {
+            color: #ff6f00;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #e65100;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a4d2e;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                flex-direction: column;
+                background: #1a4d2e;
+                width: 100%;
+                padding: 20px;
+                gap: 15px;
+                transition: left 0.3s ease;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .about h2, .services h2, .why-choose h2, .contact h2 {
+                font-size: 32px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .cta-button {
+                padding: 15px 35px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">High Pro Tree Service</a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose">Why Choose Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:9042265055" class="nav-phone">(904) 226-5055</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Professional Tree Removal Services in Orange Park</h1>
+            <p>Expert Tree Care You Can Trust - Safe, Efficient, and Affordable</p>
+            <a href="tel:9042265055" class="cta-button">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About High Pro Tree Service</h2>
+            <p class="section-subtitle">Orange Park's Most Trusted Tree Care Professionals</p>
+            <div class="about-content">
+                <p>High Pro Tree Service LLC is your premier tree removal specialist serving Orange Park and the surrounding areas. With years of experience in the industry, we understand that tree removal is more than just cutting down trees—it's about protecting your property, ensuring safety, and maintaining the beauty of your landscape.</p>
+                <br>
+                <p>Our team of certified arborists and skilled technicians brings expertise, professionalism, and state-of-the-art equipment to every job. Whether you're dealing with a hazardous tree, storm damage, or simply need to clear space for a new project, we handle each removal with precision and care. We're fully insured, licensed, and committed to delivering exceptional results that exceed your expectations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p class="section-subtitle">Comprehensive Tree Removal Solutions</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🌳</div>
+                    <h3>Complete Tree Removal</h3>
+                    <p>Safe and efficient removal of trees of any size. We handle everything from small ornamental trees to large, hazardous specimens, ensuring minimal impact on your property and complete cleanup.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Emergency Tree Removal</h3>
+                    <p>Storm damage or fallen trees? We provide rapid response emergency services to remove dangerous trees and restore safety to your property quickly and professionally.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🪓</div>
+                    <h3>Stump Removal & Grinding</h3>
+                    <p>Don't let unsightly stumps ruin your landscape. Our professional stump grinding services eliminate stumps below ground level, allowing you to reclaim your yard space.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Land Clearing</h3>
+                    <p>Preparing for construction or landscaping? We provide comprehensive land clearing services, removing trees, brush, and vegetation to prepare your property for your next project.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Hazardous Tree Assessment</h3>
+                    <p>Concerned about a tree's stability? Our certified arborists assess trees for potential hazards and recommend the safest course of action to protect your property and loved ones.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧹</div>
+                    <h3>Complete Debris Removal</h3>
+                    <p>Every job includes thorough cleanup and debris removal. We leave your property clean and ready to use, hauling away all wood, branches, and materials from the removal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose" class="why-choose">
+        <div class="container">
+            <h2>Why Choose High Pro Tree Service</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <h3>Certified Experts</h3>
+                    <p>Our team consists of certified arborists with extensive training and years of hands-on experience in tree removal.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🛡️</span>
+                    <h3>Fully Insured</h3>
+                    <p>Complete liability and workers' compensation insurance protects you and your property throughout every job.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">⚙️</span>
+                    <h3>Professional Equipment</h3>
+                    <p>State-of-the-art tools and machinery ensure safe, efficient removal with minimal disruption to your property.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">💰</span>
+                    <h3>Competitive Pricing</h3>
+                    <p>Fair, transparent pricing with free quotes. No hidden fees—just honest, affordable tree removal services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-item">
+                        <strong>📞 Phone</strong>
+                        <a href="tel:9042265055">(904) 226-5055</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>✉️ Email</strong>
+                        <a href="mailto:highprotree@gmail.com">highprotree@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>📍 Service Area</strong>
+                        Orange Park, FL & Surrounding Areas
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3>Business Hours</h3>
+                    <ul class="hours-list">
+                        <li><strong>Monday:</strong> 8:00 AM - 5:00 PM</li>
+                        <li><strong>Tuesday:</strong> 8:00 AM - 5:00 PM</li>
+                        <li><strong>Wednesday:</strong> 8:00 AM - 5:00 PM</li>
+                        <li><strong>Thursday:</strong> 8:00 AM - 5:00 PM</li>
+                        <li><strong>Friday:</strong> 8:00
