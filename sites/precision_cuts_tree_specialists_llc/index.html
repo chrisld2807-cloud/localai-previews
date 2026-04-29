@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precision Cuts Tree Specialists LLC | Professional Tree Removal in Hilliard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #2c3e20;
+            background-color: #fafafa;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, #1a4d2e 0%, #2d5a3d 100%);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav .logo span {
+            color: #8fbc8f;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        nav ul li a:hover {
+            color: #8fbc8f;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 77, 46, 0.95) 0%, rgba(45, 90, 61, 0.9) 100%), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23234d33" width="1200" height="600"/><path fill="%232d5a3d" d="M0 400 Q300 350 600 400 T1200 400 V600 H0 Z"/><circle cx="200" cy="150" r="80" fill="%231a4d2e" opacity="0.3"/><circle cx="900" cy="250" r="120" fill="%231a4d2e" opacity="0.2"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10 L55 30 L75 30 L60 42 L65 62 L50 50 L35 62 L40 42 L25 30 L45 30 Z" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.05"/></svg>');
+            opacity: 0.1;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            color: #e8f5e9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b35;
+            color: #fff;
+            padding: 1.2rem 3rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: #e85a28;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a4d2e;
+            font-weight: bold;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #ff6b35;
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: #1a4d2e;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #4a5d4a;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #2d5a3d 0%, #1a4d2e 100%);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 4rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid #2d5a3d;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #2d5a3d;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #1a4d2e;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #4a5d4a;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .why-choose {
+            background: linear-gradient(135deg, #f0f7f0 0%, #e8f5e9 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #ff6b35;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.3rem;
+            color: #1a4d2e;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            color: #4a5d4a;
+            font-size: 1rem;
+        }
+
+        .contact-section {
+            background: #1a4d2e;
+            color: #fff;
+        }
+
+        .contact-section .section-title {
+            color: #fff;
+        }
+
+        .contact-section .section-title::after {
+            background: #8fbc8f;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #8fbc8f;
+        }
+
+        .contact-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #8fbc8f;
+        }
+
+        .contact-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .contact-card a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: #ff6b35;
+        }
+
+        footer {
+            background: #0d2818;
+            color: #8fbc8f;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 5rem 1rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                min-height: 200px;
+                font-size: 3rem;
+            }
+
+            .services-grid,
+            .features-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 1rem;
+            }
+
+            nav .logo {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">Precision <span>Cuts</span></div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Expert Tree Removal Services in Hilliard</h1>
+            <p>Professional, safe, and efficient technical tree removal for residential and commercial properties</p>
+            <a href="#contact" class="cta-button">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2 class="section-title">About Precision Cuts Tree Specialists</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Your Trusted Tree Removal Experts</h3>
+                <p>At Precision Cuts Tree Specialists LLC, we understand that tree removal is a delicate balance between safety, precision, and care for your property. Serving Hilliard and the surrounding areas, our team of certified arborists brings years of experience and cutting-edge techniques to every job.</p>
+                <p>Whether you're dealing with a hazardous tree, storm damage, or need to clear land for new construction, we have the expertise and equipment to handle projects of any size. Our technical approach ensures minimal impact to your landscape while prioritizing the safety of your property and family.</p>
+                <p>We're not just about cutting down trees—we're about providing comprehensive solutions that protect your investment and enhance your outdoor space.</p>
+            </div>
+            <div class="about-image">
+                🌲
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🪓</div>
+                <h3>Technical Tree Removal</h3>
+                <p>Expert removal of trees in challenging locations using advanced rigging and crane-assisted techniques. We safely remove trees near structures, power lines, and in confined spaces.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>Emergency Tree Service</h3>
+                <p>24/7 emergency response for storm-damaged or fallen trees. We quickly assess and remove hazardous trees to restore safety and access to your property.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏗️</div>
+                <h3>Land Clearing</h3>
+                <p>Complete land clearing services for construction, development, or landscaping projects. Efficient removal and disposal of trees, stumps, and vegetation.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>Tree Risk Assessment</h3>
+                <p>Professional evaluation of tree health and stability. We identify potential hazards and provide expert recommendations to protect your property.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">♻️</div>
+                <h3>Stump Grinding</h3>
+                <p>Complete stump removal and grinding services. We eliminate unsightly stumps and prepare your land for new landscaping or construction projects.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌿</div>
+                <h3>Debris Removal</h3>
+                <p>Thorough cleanup and removal of all tree debris. We leave your property clean and ready for its next chapter, with environmentally responsible disposal.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section why-choose">
+        <h2 class="section-title">Why Choose Precision Cuts?</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <h3>Certified Professionals</h3>
+                <p>Licensed, insured, and certified arborists with extensive training</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🛡️</div>
+                <h3>Safety First</h3>
+                <p>OSHA-compliant practices ensuring the safety of your property and our team</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">⚙️</div>
+                <h3>Advanced Equipment</h3>
+                <p>State-of-the-art machinery for efficient and precise tree removal</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💰</div>
+                <h3>Fair Pricing</h3>
+                <p>Transparent, competitive rates with no hidden fees or surprises</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">⭐</div>
+                <h3>Local Expertise</h3>
+                <p>Deep knowledge of Hilliard's trees, climate, and landscape challenges</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-
