@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jungle Life Landscape LLC - Tropical Landscaping in Jacksonville</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, #1a4d2e 0%, #2d5a3d 100%);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: #90ee90;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #0f3823 0%, #1a5c3a 50%, #2d7a4e 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(144, 238, 144, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(50, 205, 50, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(34, 139, 34, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 900px;
+            color: #fff;
+            animation: fadeInUp 1.2s ease-out;
+            z-index: 1;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-tagline {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #90ee90;
+            font-weight: 500;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            color: #e8f5e9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #90ee90 0%, #32cd32 100%);
+            color: #1a4d2e;
+            padding: 1.2rem 3rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(144, 238, 144, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(144, 238, 144, 0.6);
+            background: linear-gradient(135deg, #9fff9f 0%, #3de73d 100%);
+        }
+
+        .section {
+            padding: 5rem 2rem;
+        }
+
+        .section-light {
+            background: #f8faf8;
+        }
+
+        .section-white {
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1a4d2e;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: #1a4d2e;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #2d7a4e 0%, #1a5c3a 100%);
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .about-image-icon {
+            font-size: 8rem;
+            margin-bottom: 1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid #2d7a4e;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            color: #1a4d2e;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .why-item {
+            text-align: center;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .why-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .why-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .why-item h3 {
+            color: #1a4d2e;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .why-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: #fff;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h3 {
+            color: #1a4d2e;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8faf8;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: #e8f5e9;
+            transform: translateX(5px);
+        }
+
+        .contact-item-icon {
+            font-size: 2rem;
+            color: #2d7a4e;
+            min-width: 40px;
+        }
+
+        .contact-item-content h4 {
+            color: #1a4d2e;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-item-content p {
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .contact-item-content a {
+            color: #2d7a4e;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item-content a:hover {
+            color: #90ee90;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            padding: 0.5rem 0;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #1a5c3a 0%, #2d7a4e 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .cta-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #e8f5e9;
+        }
+
+        .footer {
+            background: #1a4d2e;
+            color: #fff;
+            padding: 3rem 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-info-item a {
+            color: #90ee90;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            color: #b8e6b8;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background: #1a4d2e;
+                width: 100%;
+                padding: 2rem;
+                gap: 0;
+                transition: left 0.3s ease;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                padding: 1rem 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.3rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🌴</span>
+                <span>Jungle Life Landscape</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Transform Your Outdoor Space Into a Tropical Paradise</h1>
+            <div class="hero-tagline">Bringing the Jungle to Your Backyard</div>
+            <p>Experience Jacksonville's premier tropical landscaping service. From lush garden designs to pristine SOD installation, we create stunning outdoor environments that transport you to your own private jungle oasis.</p>
+            <a href="#contact" class="cta-button">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <section class="section section-light" id="about">
+        <div class="container">
+            <h2 class="section-title">Welcome to Jungle Life Landscape</h2>
+            <p class="section-subtitle">Jacksonville's trusted partner for tropical landscaping excellence since day one</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Your Vision, Our Expertise</h3>
+                    <p>At Jungle Life Landscape LLC, we don't just maintain yards—we create living, breathing tropical ecosystems right here in Jacksonville. Our passion for exotic plants and innovative design transforms ordinary properties into extraordinary outdoor sanctuaries.</p>
+                    <p>Whether you're dreaming of a lush tropical garden, need expert landscape design, or require professional SOD installation, our experienced team brings decades of combined horticultural knowledge to every project. We understand Jacksonville's unique climate and soil conditions, ensuring your landscape thrives year-round.</p>
+                    <p>From residential havens to commercial properties, we treat every project as our masterpiece. Let us bring the beauty and tranquility of the jungle to your doorstep.</p>
+                </div>
+                <div class="about-image">
+                    <div class="about-image-icon">🌿</div>
+                    <h3>Professional Landscaping</h3>
+                    <p>Certified experts in tropical plant care and landscape design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-white" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive landscaping solutions tailored to Jacksonville's tropical climate</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🌺</span>
+                    <h3>Tropical Landscaping</h3>
+                    <p>Immerse yourself in exotic beauty with our custom tropical landscapes. We specialize in palm trees, bird of paradise, hibiscus, and other tropical plants that thrive in Jacksonville's climate, creating a lush paradise that transforms your property into a vacation destination.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">✏️</span>
+                    <h3>Landscape Design</h3>
+                    <p>Our expert designers work closely with you to create stunning outdoor spaces that reflect your vision. From concept to completion, we blend aesthetics with functionality, incorporating water features, pathways, lighting, and plant arrangements that maximize your property's potential.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🌱</span>
+                    <h3>SOD Installation</h3>
+                    <p
