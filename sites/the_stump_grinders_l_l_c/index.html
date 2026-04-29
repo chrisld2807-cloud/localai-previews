@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Stump Grinders L.L.C - Professional Stump Removal in Yulee</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #2c5f2d 0%, #1e4620 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        nav .logo::before {
+            content: "🌲";
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        nav ul li a:hover {
+            color: #a8d5a8;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(44, 95, 45, 0.95) 0%, rgba(30, 70, 32, 0.95) 100%), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="%23228B22" width="100" height="100"/><circle cx="20" cy="20" r="15" fill="%232c5f2d" opacity="0.3"/><circle cx="80" cy="80" r="20" fill="%231e4620" opacity="0.3"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 120px 20px 100px;
+            text-align: center;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b35;
+            color: #fff;
+            padding: 18px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            background: #fff;
+        }
+
+        .about h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c5f2d;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .about h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #ff6b35;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            background: #f4f4f4;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c5f2d;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .services h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #ff6b35;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            color: #2c5f2d;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            padding: 80px 20px;
+            background: #fff;
+        }
+
+        .why-choose h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c5f2d;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .why-choose h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #ff6b35;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-item .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+            color: #2c5f2d;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #2c5f2d 0%, #1e4620 100%);
+            color: #fff;
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .contact h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #ff6b35;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+        }
+
+        .contact-item .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .contact-item a {
+            color: #a8d5a8;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            color: #fff;
+        }
+
+        .contact-item p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 20px;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #2c5f2d;
+                padding: 1rem 0;
+                gap: 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                padding: 0.8rem 20px;
+                text-align: center;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about h2, .services h2, .why-choose h2, .contact h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid, .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-button {
+                padding: 15px 35px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 80px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            nav .logo {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">The Stump Grinders L.L.C</div>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose">Why Choose Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Professional Stump Removal in Yulee</h1>
+            <p>Transform your landscape with expert stump grinding services. Fast, efficient, and affordable solutions for a cleaner, safer yard.</p>
+            <a href="tel:9043863401" class="cta-button">Get Your Free Quote Today</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About The Stump Grinders L.L.C</h2>
+            <div class="about-content">
+                <p>Serving the Yulee community with pride, The Stump Grinders L.L.C specializes in professional stump removal services that restore the beauty and functionality of your outdoor spaces. With years of experience and state-of-the-art equipment, we tackle stumps of all sizes with precision and care.</p>
+                <p>We understand that unsightly stumps can be more than just an eyesore—they're safety hazards, breeding grounds for pests, and obstacles to your landscaping dreams. Our team is dedicated to providing efficient, thorough stump grinding services that leave your property clean, level, and ready for whatever comes next.</p>
+                <p>From residential yards to commercial properties, we bring professionalism, reliability, and exceptional results to every job. When you choose The Stump Grinders L.L.C, you're choosing a local business that cares about your satisfaction and the beauty of our Yulee community.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Stump Removal Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🪓</div>
+                    <h3>Residential Stump Grinding</h3>
+                    <p>Remove unwanted stumps from your yard quickly and efficiently. We grind stumps below ground level, allowing you to replant, build, or simply enjoy a cleaner landscape.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Commercial Stump Removal</h3>
+                    <p>Keep your commercial property looking pristine and professional. We work efficiently to minimize disruption to your business operations while delivering superior results.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌳</div>
+                    <h3>Large Stump Extraction</h3>
+                    <p>No stump is too big for our advanced equipment. We handle massive stumps from mature trees with expertise, grinding them down completely for easy removal and disposal.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧹</div>
+                    <h3>Complete Cleanup Service</h3>
+                    <p>We don't just grind and go. Our service includes thorough cleanup, removing wood chips and debris, leaving your property neat and ready for your next project.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Emergency Stump Removal</h3>
+                    <p>Storm damage or urgent project deadlines? We offer prompt emergency services to address your stump removal needs quickly and professionally.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">♻️</div>
+                    <h3>Eco-Friendly Disposal</h3>
+                    <p>We care about the environment. Wood chips from grinding can be repurposed as mulch for your garden, or we'll handle responsible disposal for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose" class="why-choose">
+        <div class="container">
+            <h2>Why Choose The Stump Grinders L.L.C</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="icon">✅</div>
+                    <h3>Expert Technicians</h3>
+                    <p>Our trained professionals have the experience and skill to handle any stump removal challenge safely and efficiently.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">💰</div>
+                    <h3>Competitive Pricing</h3>
+                    <p>Quality service shouldn't break the bank. We offer fair, transparent pricing with free quotes for all projects.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">⚙️</div>
+                    <h3>Advanced Equipment</h3>
+                    <p>We use modern, well-maintained stump grinding machinery that gets the job done right the first time.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🏆</div>
+                    <h3>Local & Trusted</h3>
+                    <p>As a Yulee-based business, we take pride in serving our neighbors with integrity and exceptional customer service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-grid
