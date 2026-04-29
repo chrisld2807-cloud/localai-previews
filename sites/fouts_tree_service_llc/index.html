@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fouts Tree Service LLC | Professional Tree Removal in Yulee</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(34, 51, 34, 0.98);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #8BC34A;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(34, 51, 34, 0.95), rgba(56, 87, 35, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23385723" width="1200" height="600"/><path fill="%23223322" d="M0 400 Q300 350 600 400 T1200 400 V600 H0 Z"/><circle cx="200" cy="150" r="80" fill="%232d4a2d" opacity="0.5"/><circle cx="900" cy="250" r="120" fill="%232d4a2d" opacity="0.4"/><circle cx="600" cy="100" r="60" fill="%232d4a2d" opacity="0.6"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: slideUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #8BC34A;
+            color: #fff;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 195, 74, 0.4);
+            border: 3px solid #8BC34A;
+        }
+
+        .cta-button:hover {
+            background: #fff;
+            color: #385723;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(139, 195, 74, 0.6);
+        }
+
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #223322;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #8BC34A;
+            border-radius: 2px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about {
+            background: #f9f9f9;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: #385723;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #385723, #8BC34A);
+            height: 400px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '🌲';
+            position: absolute;
+            font-size: 15rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.3;
+        }
+
+        .services {
+            background: #fff;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-color: #8BC34A;
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            color: #385723;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .why-choose {
+            background: linear-gradient(135deg, #223322, #385723);
+            color: #fff;
+        }
+
+        .why-choose .section-title {
+            color: #fff;
+        }
+
+        .why-choose .section-title::after {
+            background: #8BC34A;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature p {
+            color: #ddd;
+        }
+
+        .contact {
+            background: #f9f9f9;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            background: #fff;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h3 {
+            color: #385723;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: #8BC34A;
+            min-width: 30px;
+        }
+
+        .contact-item-content h4 {
+            color: #385723;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .contact-item-content a {
+            color: #385723;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item-content a:hover {
+            color: #8BC34A;
+        }
+
+        .hours-table {
+            background: #fff;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .hours-table h3 {
+            color: #385723;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+
+        .hours-day {
+            font-weight: 600;
+            color: #385723;
+        }
+
+        .hours-time {
+            color: #666;
+        }
+
+        footer {
+            background: #223322;
+            color: #fff;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-info {
+            margin-bottom: 2rem;
+        }
+
+        .footer-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-contact a {
+            color: #8BC34A;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(34, 51, 34, 0.98);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                padding: 1rem 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Fouts Tree Service LLC</div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Expert Tree Removal Services in Yulee</h1>
+            <p>Professional, Safe, and Reliable Tree Care for Your Property</p>
+            <a href="#contact" class="cta-button">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Fouts Tree Service</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Your Trusted Tree Removal Experts</h3>
+                    <p>At Fouts Tree Service LLC, we understand that trees are valuable assets to your property, but sometimes removal becomes necessary for safety, aesthetics, or development reasons. With years of experience serving the Yulee community, we've built our reputation on quality workmanship, safety, and customer satisfaction.</p>
+                    <p>Our team of certified professionals uses state-of-the-art equipment and industry-leading techniques to handle tree removal projects of any size. Whether it's a single hazardous tree or clearing for a construction project, we approach every job with the same commitment to excellence and safety.</p>
+                    <p>We're not just tree removal specialists – we're your neighbors, committed to keeping Yulee beautiful and safe, one tree at a time.</p>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🌳</div>
+                    <h3>Tree Removal</h3>
+                    <p>Safe and efficient removal of trees of any size. We handle hazardous, dead, or unwanted trees with precision and care, ensuring no damage to your property or surrounding landscape.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚠️</div>
+                    <h3>Emergency Tree Removal</h3>
+                    <p>Storm damage or fallen trees? We provide prompt emergency services to protect your property and restore safety. Available for urgent situations that can't wait.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Land Clearing</h3>
+                    <p>Comprehensive land clearing services for construction, development, or landscaping projects. We clear and prepare your land efficiently while maintaining environmental responsibility.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🪓</div>
+                    <h3>Stump Removal</h3>
+                    <p>Complete stump grinding and removal services to reclaim your yard space. We remove unsightly stumps and roots, leaving your property clean and ready for new landscaping.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Tree Assessment</h3>
+                    <p>Professional evaluation of tree health and safety concerns. We provide expert recommendations on whether removal is necessary or if alternative solutions exist.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚜</div>
+                    <h3>Debris Removal</h3>
+                    <p>Complete cleanup and hauling of all tree debris. We leave your property clean and pristine, handling all waste removal and disposal responsibly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose Fouts Tree Service</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <h3>Licensed & Insured</h3>
+                    <p>Fully licensed and insured for your complete protection and peace of
