@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bobby Campbell Roofing Inc - Professional Roofing Services in Orange Park</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            background: #1a1a1a;
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-accent {
+            color: #d32f2f;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #d32f2f;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(211, 47, 47, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23333" width="1200" height="600"/><path fill="%23444" d="M0 300L50 250L100 300L150 250L200 300L250 250L300 300L350 250L400 300L450 250L500 300L550 250L600 300L650 250L700 300L750 250L800 300L850 250L900 300L950 250L1000 300L1050 250L1100 300L1150 250L1200 300V600H0Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #d32f2f;
+            color: #fff;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+            border: 2px solid #d32f2f;
+        }
+
+        .cta-button:hover {
+            background: #b71c1c;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.6);
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about {
+            background: #f5f5f5;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #d32f2f;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #d32f2f 0%, #1a1a1a 100%);
+            height: 400px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 4rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid #d32f2f;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #d32f2f;
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .why-choose {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: #fff;
+        }
+
+        .why-choose .section-title {
+            color: #fff;
+        }
+
+        .why-choose .section-subtitle {
+            color: #ddd;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            background: rgba(211, 47, 47, 0.2);
+            transform: scale(1.05);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #d32f2f;
+        }
+
+        .feature h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature p {
+            color: #ddd;
+        }
+
+        .contact {
+            background: #f5f5f5;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: #d32f2f;
+            margin-top: 0.2rem;
+        }
+
+        .contact-item-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: #1a1a1a;
+        }
+
+        .contact-item-content p {
+            color: #666;
+        }
+
+        .contact-item-content a {
+            color: #d32f2f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-item-content a:hover {
+            text-decoration: underline;
+        }
+
+        .hours-table {
+            margin-top: 1rem;
+        }
+
+        .hours-table p {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            padding: 3rem;
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(211, 47, 47, 0.3);
+        }
+
+        .cta-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button-secondary {
+            display: inline-block;
+            background: #fff;
+            color: #d32f2f;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button-secondary:hover {
+            background: #f5f5f5;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .footer {
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .footer p {
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1a1a1a;
+                flex-direction: column;
+                padding: 1rem 0;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 1rem 2rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">Bobby Campbell <span class="logo-accent">Roofing</span></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose">Why Choose Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Orange Park's Trusted Roofing Experts</h1>
+            <p>Protecting Your Home With Quality Craftsmanship Since Day One</p>
+            <a href="#contact" class="cta-button">Get Your Free Quote Today</a>
+        </div>
+    </section>
+
+    <section class="section about" id="about">
+        <h2 class="section-title">About Bobby Campbell Roofing Inc</h2>
+        <p class="section-subtitle">Your Local Roofing Partner in Orange Park</p>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Quality Roofing You Can Trust</h3>
+                <p>Bobby Campbell Roofing Inc has been serving the Orange Park community with integrity and exceptional workmanship. We understand that your roof is your home's first line of defense against the Florida elements, and we take that responsibility seriously.</p>
+                <p>Our team of experienced roofing professionals is dedicated to delivering superior results on every project, whether it's a simple repair, a complete re-roof, or a new residential installation. We use only the highest quality materials and proven techniques to ensure your roof stands the test of time.</p>
+                <p>When you choose Bobby Campbell Roofing Inc, you're choosing a local business that cares about your home as much as you do. We're committed to transparent pricing, honest assessments, and work that exceeds your expectations.</p>
+            </div>
+            <div class="about-image">
+                🏠
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <h2 class="section-title">Our Roofing Services</h2>
+        <p class="section-subtitle">Comprehensive roofing solutions tailored to your needs</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏘️</div>
+                <h3>Residential Roofing</h3>
+                <p>From new construction to existing homes, we install premium roofing systems that protect your family and enhance your property's curb appeal. We work with all major roofing materials including asphalt shingles, metal roofing, and tile.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔄</div>
+                <h3>Complete Re-Roofs</h3>
+                <p>When your roof has reached the end of its lifespan, we provide complete tear-off and replacement services. Our efficient process minimizes disruption to your daily life while delivering a roof that will protect your home for decades to come.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Roof Repairs</h3>
+                <p>Don't let minor issues become major problems. We handle all types of roof repairs including leak detection and repair, shingle replacement, flashing repairs, and storm damage restoration. Quick response times to prevent further damage.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section why-choose" id="why-choose">
+        <h2 class="section-title">Why Choose Bobby Campbell Roofing</h2>
+        <p class="section-subtitle">The difference is in the details</p>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">⭐</div>
+                <h3>Local Expertise</h3>
+                <p>We know Florida roofing and the unique challenges of our climate</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💼</div>
+                <h3>Licensed & Insured</h3>
+                <p>Fully licensed, bonded, and insured for your complete protection</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✓</div>
+                <h3>Quality Materials</h3>
+                <p>We use only top-grade materials from trusted manufacturers</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🤝</div>
+                <h3>Honest Pricing</h3>
+                <p>Transparent quotes with no hidden fees or surprises</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast Response</h3>
+                <p>Quick turnaround times without compromising on quality</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🛡️</div
