@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mow Pressure Lawn Care | Professional Lawn Maintenance in Middleburg</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            background-color: #1a5f1a;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #90ee90;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a5f1a 0%, #2d8b2d 100%);
+            color: #fff;
+            padding: 120px 20px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #fff;
+            color: #1a5f1a;
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+            background-color: #ffeb3b;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a5f1a;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about {
+            background-color: #f9f9f9;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            border-top: 4px solid #1a5f1a;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a5f1a;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .why-choose {
+            background: linear-gradient(135deg, #1a5f1a 0%, #2d8b2d 100%);
+            color: #fff;
+        }
+
+        .why-choose .section-title {
+            color: #fff;
+        }
+
+        .why-choose .section-subtitle {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .feature p {
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .contact {
+            background-color: #f9f9f9;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #1a5f1a;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-item-icon {
+            font-size: 1.5rem;
+            color: #1a5f1a;
+            margin-top: 0.2rem;
+        }
+
+        .contact-item-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: #333;
+        }
+
+        .contact-item-content p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .contact-item-content a {
+            color: #1a5f1a;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .contact-item-content a:hover {
+            text-decoration: underline;
+        }
+
+        .hours-list {
+            list-style: none;
+            color: #666;
+        }
+
+        .hours-list li {
+            padding: 0.4rem 0;
+        }
+
+        footer {
+            background-color: #0f3d0f;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 20px;
+        }
+
+        footer p {
+            opacity: 0.9;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #1a5f1a;
+                flex-direction: column;
+                padding: 1rem 0;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 1rem 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .cta-button {
+                padding: 15px 35px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">🌿 Mow Pressure Lawn Care</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Expert Lawn Care in Middleburg</h1>
+            <p>Transform your outdoor space with professional lawn maintenance services you can trust</p>
+            <a href="tel:9048017477" class="cta-button">Call (904) 801-7477</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Mow Pressure Lawn Care</h2>
+            <div class="about-content">
+                <p>At Mow Pressure Lawn Care, we're passionate about creating and maintaining beautiful lawns throughout Middleburg. With years of experience in professional landscaping, we understand that your lawn is more than just grass—it's an extension of your home and a reflection of your pride in your property.</p>
+                <p>Our team of skilled professionals brings dedication, expertise, and attention to detail to every project. Whether you need regular maintenance or a complete lawn transformation, we deliver results that exceed expectations. We use quality equipment and proven techniques to ensure your lawn stays healthy, vibrant, and beautiful year-round.</p>
+                <p>When you choose Mow Pressure Lawn Care, you're choosing reliability, professionalism, and a commitment to excellence that shows in every blade of grass.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive lawn maintenance solutions tailored to keep your property looking its best</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🌱</div>
+                    <h3>Lawn Mowing</h3>
+                    <p>Professional mowing services with precision cutting to maintain the perfect height for your grass type. We ensure clean, even cuts that promote healthy growth.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✂️</div>
+                    <h3>Edging & Trimming</h3>
+                    <p>Crisp, clean edges along walkways, driveways, and flower beds. Detail trimming around obstacles for a polished, manicured appearance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🍂</div>
+                    <h3>Debris Removal</h3>
+                    <p>Thorough cleanup of grass clippings, leaves, and yard debris. We leave your property spotless after every service visit.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💧</div>
+                    <h3>Pressure Washing</h3>
+                    <p>High-quality pressure washing services to clean driveways, walkways, patios, and exterior surfaces. Restore your property's curb appeal.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌿</div>
+                    <h3>Lawn Treatment</h3>
+                    <p>Fertilization and weed control programs designed to keep your lawn lush, green, and weed-free throughout the growing season.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏡</div>
+                    <h3>Property Maintenance</h3>
+                    <p>Complete property upkeep including mulching, pruning, and seasonal cleanups to maintain your landscape's beauty year-round.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose" class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose Mow Pressure Lawn Care</h2>
+            <p class="section-subtitle">We're committed to delivering exceptional service and outstanding results</p>
+            <div class="features-grid">
+                <div class="feature">
+                    <span class="feature-icon">⭐</span>
+                    <h3>Experienced Team</h3>
+                    <p>Our skilled professionals bring years of expertise and a passion for quality lawn care to every job.</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🎯</span>
+                    <h3>Reliable Service</h3>
+                    <p>We show up on time, every time. Count on consistent, dependable service you can trust.</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">💰</span>
+                    <h3>Competitive Pricing</h3>
+                    <p>Quality service at fair, transparent prices. Get the value you deserve without compromising on results.</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🛠️</span>
+                    <h3>Professional Equipment</h3>
+                    <p>We use top-quality, well-maintained equipment for superior results and efficient service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Ready to transform your lawn? Contact us today for a free consultation</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📞</div>
+                        <div class="contact-item-content">
+                            <h4>Phone</h4>
+                            <a href="tel:9048017477">(904) 801-7477</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">✉️</div>
+                        <div class="contact-item-content">
+                            <h4>Email</h4>
+                            <a href="mailto:mowpressure@gmail.com">mowpressure@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div class="contact-item-content">
+                            <h4>Service Area</h4>
+                            <p>Middleburg, FL & Surrounding Areas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3>Business Hours</h3>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">🕐</div>
+                        <div class="contact-item-content">
+                            <ul class="hours-list">
+                                <li><strong>Monday:</strong> 8:00 AM - 5:00 PM</li>
+                                <li><strong>Tuesday:</strong> 8:00 AM - 5:00 PM</li>
+                                <li><strong>Wednesday:</strong> 8:00 AM - 5:00 PM</li>
+                                <li><strong>Thursday:</strong> 8:00 AM - 5:00 PM</li>
+                                <li><strong>Friday:</strong> 8:00 AM - 5:00 PM</li>
