@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Landscaping Solutions Inc | Commercial Landscape Services | St. Augustine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d5016;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #5a8c2e;
+        }
+
+        .nav-cta {
+            background: #5a8c2e;
+            color: white !important;
+            padding: 0.6rem 1.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: #4a7325;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(90, 140, 46, 0.3);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #2d5016;
+            transition: all 0.3s ease;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2d5016 0%, #5a8c2e 100%);
+            color: white;
+            padding: 120px 20px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(135deg, rgba(45, 80, 22, 0.95) 0%, rgba(90, 140, 46, 0.9) 100%),
+                url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M50 10 L60 30 L80 30 L65 45 L70 65 L50 50 L30 65 L35 45 L20 30 L40 30 Z" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: cover, 150px 150px;
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #2d5016;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+            background: #f8f8f8;
+        }
+
+        .section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2d5016;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about {
+            background: #f9f9f9;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #5a8c2e 0%, #7dad45 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid #5a8c2e;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .why-choose {
+            background: linear-gradient(135deg, #2d5016 0%, #5a8c2e 100%);
+            color: white;
+        }
+
+        .why-choose .section-title,
+        .why-choose .section-subtitle {
+            color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-item p {
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .contact {
+            background: #f9f9f9;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .contact-item-icon {
+            font-size: 2rem;
+            color: #5a8c2e;
+            min-width: 40px;
+        }
+
+        .contact-item-content h3 {
+            font-size: 1.2rem;
+            color: #2d5016;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item-content p {
+            color: #666;
+            font-size: 1.05rem;
+        }
+
+        .contact-item-content a {
+            color: #5a8c2e;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item-content a:hover {
+            color: #4a7325;
+        }
+
+        .hours-list {
+            list-style: none;
+            color: #666;
+        }
+
+        .hours-list li {
+            padding: 0.3rem 0;
+        }
+
+        .contact-cta {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-cta h3 {
+            font-size: 2rem;
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+
+        .contact-cta p {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-cta .cta-button {
+            background: #5a8c2e;
+            color: white;
+            align-self: center;
+        }
+
+        .contact-cta .cta-button:hover {
+            background: #4a7325;
+        }
+
+        footer {
+            background: #1a2e0f;
+            color: white;
+            padding: 3rem 20px 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-info {
+            margin-bottom: 2rem;
+        }
+
+        .footer-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #7dad45;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #7dad45;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero {
+                padding: 80px 20px 60px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">PROFESSIONAL LANDSCAPING SOLUTIONS INC</div>
+            <div class="mobile-menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose">Why Choose Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:9043925999" class="nav-cta">Call Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Premier Commercial Landscaping in St. Augustine</h1>
+                <p>Transform your commercial property with expert landscape solutions that enhance curb appeal, increase property value, and create lasting impressions.</p>
+                <a href="tel:9043925999" class="cta-button">Get a Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title" style="text-align: left;">Excellence in Commercial Landscaping</h2>
+                    <p>Professional Landscaping Solutions Inc has been serving St. Augustine's commercial properties with unmatched expertise and dedication. We understand that your landscape is often the first impression clients and customers have of your business.</p>
+                    <p>Our team of certified landscape professionals brings years of experience in designing, installing, and maintaining commercial properties of all sizes. From office parks to retail centers, we deliver landscapes that enhance your brand and create welcoming environments.</p>
+                    <p>We pride ourselves on reliability, attention to detail, and a commitment to sustainable practices that protect the beauty of St. Augustine while maintaining your property's pristine appearance year-round.</p>
+                </div>
+                <div class="about-image">
+                    🌳
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Commercial Landscape Services</h2>
+            <p class="section-subtitle">Comprehensive solutions tailored to your business needs, delivered with professionalism and precision</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🏢</span>
+                    <h3>Property Maintenance</h3>
+                    <p>Regular maintenance programs designed to keep your commercial property looking impeccable. Includes mowing, edging, trimming, and seasonal cleanups that maintain your landscape investment.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🌿</span>
+                    <h3>Landscape Design & Installation</h3>
+                    <p>Custom landscape designs that reflect your brand identity and create inviting outdoor spaces. From concept to installation, we bring your vision to life with sustainable plant selections.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">💧</span>
+                    <h3>Irrigation Systems</h3>
+                    <p>Professional irrigation system installation and maintenance ensuring efficient water management. Smart systems that reduce costs while keeping your landscape healthy and vibrant.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🌺</span>
+                    <h3>Seasonal Enhancements</h3>
+                    <p>Keep your property fresh and appealing year-round with seasonal color rotations, mulching, and decorative plantings that make your business stand out.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">✂️</span>
+                    <h3>Turf Management</h3>
+                    <p>Expert lawn care including fertilization, pest control, disease management, and aeration to ensure healthy, lush turf that enhances your property's appearance.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🪨</span>
+                    <h3>Hardscape Services</h3>
+                    <p>Installation and maintenance of walkways, retaining walls, pat
