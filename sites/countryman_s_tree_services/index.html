@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countryman's Tree Services - Professional Tree Removal in Middleburg</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #2c3e20;
+            background-color: #f9f9f7;
+        }
+
+        .nav {
+            background-color: rgba(34, 51, 20, 0.97);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            margin-right: 0.5rem;
+            color: #7fb069;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #7fb069;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(34, 51, 20, 0.92), rgba(63, 88, 44, 0.88)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23405d2a" width="1200" height="600"/><path fill="%23548238" d="M0 400 Q300 350 600 400 T1200 400 V600 H0 Z"/><circle cx="200" cy="150" r="40" fill="%232d4018" opacity="0.3"/><circle cx="800" cy="200" r="60" fill="%232d4018" opacity="0.3"/><circle cx="1000" cy="100" r="50" fill="%232d4018" opacity="0.3"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            color: #e8f5e3;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #7fb069;
+            color: #ffffff;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(127, 176, 105, 0.4);
+            border: 3px solid transparent;
+        }
+
+        .cta-button:hover {
+            background-color: #6a9b57;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(127, 176, 105, 0.6);
+            border-color: #ffffff;
+        }
+
+        .phone-hero {
+            display: inline-block;
+            margin-left: 2rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            border: 3px solid #ffffff;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .phone-hero:hover {
+            background-color: #ffffff;
+            color: #3f582c;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #223314;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #5a6f4a;
+            margin-bottom: 3rem;
+        }
+
+        .about {
+            background-color: #ffffff;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #3f582c;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #7fb069, #5a8c44);
+            height: 400px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .services {
+            background-color: #f3f7f0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 5px solid #7fb069;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #7fb069;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #223314;
+        }
+
+        .service-card p {
+            color: #5a6f4a;
+            line-height: 1.7;
+        }
+
+        .why-choose {
+            background-color: #ffffff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #7fb069;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #223314;
+        }
+
+        .feature p {
+            color: #5a6f4a;
+            line-height: 1.7;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #3f582c, #223314);
+            color: #ffffff;
+        }
+
+        .contact .section-title,
+        .contact .section-subtitle {
+            color: #ffffff;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+        }
+
+        .contact-item {
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: start;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-right: 1.5rem;
+            color: #7fb069;
+            min-width: 40px;
+        }
+
+        .contact-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #7fb069;
+        }
+
+        .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #7fb069;
+        }
+
+        .contact-item p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .hours-list {
+            list-style: none;
+            font-size: 1.1rem;
+        }
+
+        .hours-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-cta {
+            background-color: rgba(127, 176, 105, 0.15);
+            padding: 3rem;
+            border-radius: 15px;
+            border: 2px solid #7fb069;
+        }
+
+        .contact-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #7fb069;
+        }
+
+        .contact-cta p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            background-color: #1a2610;
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .footer p {
+            font-size: 0.95rem;
+            color: #a8bfa0;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: rgba(34, 51, 20, 0.98);
+                padding: 2rem;
+                gap: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .phone-hero {
+                display: block;
+                margin: 1.5rem auto 0;
+                width: fit-content;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 250px;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 5rem 1rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .phone-hero {
+                font-size: 1.3rem;
+                padding: 0.8rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🌲</span>
+                Countryman's Tree Services
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Expert Tree Removal Services in Middleburg</h1>
+            <p>Trusted professionals providing safe, efficient tree removal for residential and commercial properties throughout the community</p>
+            <a href="#contact" class="cta-button">Get Your Free Quote</a>
+            <a href="tel:9046732216" class="phone-hero">📞 (904) 673-2216</a>
+        </div>
+    </section>
+
+    <section class="section about" id="about">
+        <h2 class="section-title">Middleburg's Trusted Tree Experts</h2>
+        <p class="section-subtitle">Professional tree care you can count on</p>
+        <div class="about-content">
+            <div class="about-text">
+                <p>At Countryman's Tree Services, we understand that trees are a valuable part of your property. Whether you're dealing with a hazardous tree, storm damage, or simply need to clear space for new construction, our experienced team is here to help.</p>
+                <p>Serving the Middleburg community with pride, we bring years of expertise and state-of-the-art equipment to every job. Our commitment to safety, efficiency, and customer satisfaction has made us the go-to choice for tree removal services in the area.</p>
+                <p>From small residential trees to large commercial projects, we handle every job with the same level of professionalism and attention to detail. When you choose Countryman's, you're choosing peace of mind.</p>
+            </div>
+            <div class="about-image">
+                🌳
+            </div>
+        </div>
+    </section>
+
+    <section class="section services" id="services">
+        <h2 class="section-title">Our Tree Removal Services</h2>
+        <p class="section-subtitle">Comprehensive solutions for all your tree removal needs</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">⚠️</div>
+                <h3>Hazardous Tree Removal</h3>
+                <p>Safe removal of dangerous, dead, or diseased trees that pose a risk to your property and family. We assess each situation carefully and use proper techniques to eliminate threats.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌪️</div>
+                <h3>Storm Damage Cleanup</h3>
+                <p>Emergency response for fallen or damaged trees after severe weather. Our team acts quickly to clear debris and restore safety to your property when you need it most.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏗️</div>
+                <h3>Land Clearing</h3>
+                <p>Complete tree removal for construction sites, property development, or landscaping projects. We clear your land efficiently while respecting the environment and your timeline.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏘️</div>
+                <h3>Residential Removal</h3>
+                <p>Expert tree removal services tailored for homeowners. We work carefully around your property, ensuring minimal disruption to your landscape and complete cleanup.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Commercial Services</h3>
+                <p>Large-scale tree removal for businesses, municipalities, and property managers. We handle projects of any size with professional efficiency and proper insurance coverage.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🪓</div>
+                <h3>Stump Removal</h3>
+                <p>Complete stump grinding and removal to restore your landscape. We eliminate unsightly stumps and roots, preparing your yard for new plantings or construction.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section why-choose">
+        <h2 class="section-title">Why Choose Countryman's?</h2>
+        <p class="section-subtitle">The difference that experience and dedication make</p>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">✅</div>
+                <h3>Licensed & Insured</h3>
+                <p>Fully licensed, bonded, and insured for your complete protection and peace of mind on every project.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">👷</div>
+                <h3>Expert Team</h3>
+                <p>Highly trained professionals with years of experience in safe tree removal techniques and best practices.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-
